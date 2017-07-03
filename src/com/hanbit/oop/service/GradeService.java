@@ -4,26 +4,27 @@ import com.hanbit.oop.domain.GradeBean;
 
 public class GradeService {
      GradeBean g=new GradeBean();
+     int sum=0,avg=0;
      public GradeService(){
     	 
      }
      
      public int getSum(){
-        return g.getEng()+g.getKor()+g.getMath();
+        return sum=g.getEng()+g.getKor()+g.getMath();
      }
      public int avg() {
-		return g.getEng()+g.getKor()+g.getMath()/3;
+		return avg=getSum()/3; //g.getEng()+g.getKor()+g.getMath()
 	}
     	 public String getcalcGrade() {
-    			String result;
-    			if(g.getEng()+g.getKor()+g.getMath()/3>=90){
+    			String result="";
+    			if(this.avg()>=90){
     				result="수";
-    			}else if(g.getEng()+g.getKor()+g.getMath()>=80){
+    			}else if(this.avg()>=80){
     				result="우";
-    			}else if(g.getEng()+g.getKor()+g.getMath()>=70){
+    			}else if(this.avg()>=70){
     				result="미";
     			}
-    			else if(g.getEng()+g.getKor()+g.getMath()>=60){
+    			else if(this.avg()>=60){
     				result="양";
     			}
     			else{
